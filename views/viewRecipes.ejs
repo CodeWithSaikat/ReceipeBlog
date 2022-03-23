@@ -1,0 +1,99 @@
+<!-- Category view hobe -->
+<h2>Explore Recipes</h2>
+
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Explore Recipes</li>
+    </ol>
+  </nav>
+
+  <section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h3>Indian Recipes</h3>
+    </div>
+
+
+
+    <!-- Indian food start -->
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+       <% if(typeof latestFood.indian !== 'undefine' && latestFood.indian.length > 0){ %>
+           <% latestFood.indian.forEach((recipe, index)=>{ %>
+
+        <a href="/detailsViewRecipes/<%- recipe._id %>" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="img/ <%- recipe.image %>" alt=" <%- recipe.recipeName %> " loading='lazy'>
+            </div>
+            <div class="pt-1"><%- recipe.recipeName %></div>
+        </a>
+
+    <% }) %>
+<% } else{ %>
+    <p>No items found</p>
+<%}%>
+    </div>
+    <!-- Indian food End -->
+
+
+
+    <!-- Thai food Start -->
+
+</section>
+  <section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h3>Thai Recipes</h3>
+    </div>
+
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        <% if(typeof latestFood.thai !== 'undefine' && latestFood.thai.length > 0){ %>
+            <% latestFood.thai.forEach((recipe, index)=>{ %>
+
+        <a href="/detailsViewRecipes/<%- recipe._id %>" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="img/ <%- recipe.image %>" alt=" <%- recipe.recipeName %> " loading='lazy'>
+            </div>
+            <div class="pt-1"><%- recipe.recipeName %></div>
+        </a>
+
+    <% }) %>
+<% } else{%>
+    <p>No items found</p>
+<%}%>
+    </div>
+
+    <!-- Thai food End -->
+
+
+
+    <!-- American food Start -->
+
+</section>
+  <section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h3>American Recipes</h3>
+    </div>
+
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        <% if(typeof latestFood.american !== 'undefine' && latestFood.american.length > 0){ %>
+           <% latestFood.american.forEach((recipe, index)=>{ %>
+
+        <a href="/detailsViewRecipes/<%- recipe._id %>" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="img/ <%- recipe.image %>" alt=" <%- recipe.recipeName %> " loading='lazy'>
+            </div>
+            <div class="pt-1"><%- recipe.recipeName %></div>
+        </a>
+
+    <% }) %>
+<% } else{%>
+    <p>No items found</p>
+<%}%>
+    </div>
+</section>
+
+    <!-- American food End -->

@@ -1,0 +1,25 @@
+<!-- Category view hobe -->
+<h2>Explore Categories</h2>
+
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Explore Categories</li>
+    </ol>
+  </nav>
+
+<div class="row row-cols-3 row-cols-lg-3 g-4 g-lg-4 mb-4">
+<% if(typeof categories !=='undefine' && categories.length > 0 ){ %>
+    <% categories.forEach((category, index)=>{%>
+        <a href="/viewRecipes/<%- category.name %>" class="col text-center category__link">
+            <div class="category__img shadow">
+                <img src="/img/ <%- category.image %>" alt="<%- category.name %>" loading='lazy'>
+            </div>
+            <div class="pt-1">
+                <%- category.name %>
+            </div>
+        </a>
+<% }) %>
+     <% } %>
+</div>
